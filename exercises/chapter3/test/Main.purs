@@ -2,7 +2,7 @@ module Test.Main where
 
 import Prelude
 import Test.MySolutions
-import Data.AddressBook (AddressBook, Entry, emptyBook, findEntry, insertEntry)
+import Data.AddressBook (AddressBook, Entry, emptyBook, findEntry, insertEntry, findEntryByStreet)
 import Data.Maybe (Maybe(..))
 import Effect (Effect)
 import Test.Unit (TestSuite, suite, test)
@@ -64,11 +64,12 @@ main =
         Assert.equal (Just john)
           $ findEntry "John" "Smith" book
           
-    {-  Move this block comment starting point to enable more tests
+    
     suite "Exercise - findEntryByStreet" do
       test "Lookup existing" do
         Assert.equal (Just john)
           $ findEntryByStreet john.address.street book
+{-  Move this block comment starting point to enable more tests
       test "Lookup missing" do
         Assert.equal Nothing
           $ findEntryByStreet "456 Nothing St." book
