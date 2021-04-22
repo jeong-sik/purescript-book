@@ -59,6 +59,11 @@ main :: Effect Unit
 main =
   runTest do
     runChapterExamples
+    suite "Exercise findEntry" do
+      test "find Entry" do
+        Assert.equal (Just john)
+          $ findEntry "John" "Smith" book
+          
     {-  Move this block comment starting point to enable more tests
     suite "Exercise - findEntryByStreet" do
       test "Lookup existing" do
